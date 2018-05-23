@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+    </head>
+    <body>
+         <a href="#section-1" class="slide-section">Go to Element</a>
+        <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+        
+        <div id="section-1">This is the element where you want to scroll to</div>
+        
+        <script>
+        $('.slide-section').click(function(e)
+        {
+            var linkHref= $(this).attr('href');
+            console.log(linkHref);
+            e.preventDefault();
+            console.log($(linkHref).offset().top);
+            
+            $('body','html').animate
+            ({
+                scrollTop:$(linkHref).offset().top
+            });
+            
+        });
+        </script>
+        
+    </body>
+</html>
